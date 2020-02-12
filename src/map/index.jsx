@@ -62,7 +62,7 @@ function Map(height, width) {
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZG9uYXdhbHQiLCJhIjoiY2s2aG96NWFnMWNobTNlbnZ2aG9pa2ZpNSJ9.nNX6JxGCXLmb91C0NpSaWw",
         {
           attribution:
-            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> by students from HETIC',
           maxZoom: 18,
           id: "donawalt/ck6hp89630sim1iqoifge5e0x",
           accessToken:

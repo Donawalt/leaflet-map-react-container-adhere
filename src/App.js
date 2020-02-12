@@ -5,7 +5,7 @@ import "./styles.css";
 export default function App() {
   return (
     <>
-      <Map height="90vh" width="100vw" />
+      <Map height="90vh" />
     </>
   );
 }
