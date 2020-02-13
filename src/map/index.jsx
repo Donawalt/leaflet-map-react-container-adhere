@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import L from "leaflet";
 
 function Map(props) {
-  console.log(props);
-  useEffect(() => {
+  const mapAppFunc = ()=> {
     var circles = [];
     var maker = [];
     var currentData = [];
@@ -11,8 +10,11 @@ function Map(props) {
     var nivZoom = 13; // initial zoom level
     var currentView = [48.8620543, 2.3449645];
 
+    var mymap = L.map("map_id",{
+      scrollWheelZoom: false
+    }).setView(currentView, nivZoom); // we initialize the map
     var eventLocation = props.eventLocationData.dataEventLocation; //dummy data in the goal to try  the principle
-    console.log(eventLocation);
+
     var Icon = L.icon({
       // Création d'icone personalisée
       iconUrl: props.iconUrl.iconUrlChallenge, // Créer une variable suivant une condition
@@ -30,10 +32,6 @@ function Map(props) {
       iconAnchor: [25, 34], // point of the icon which will correspond to marker's location
       popupAnchor: [-10, -34] // point from which the popup should open relative to the iconAnchor
     }); // We initialise the icon
-
-    var mymap = L.map("map_id",{
-      scrollWheelZoom: false
-    }).setView(currentView, nivZoom); // we initialize the map
 
     const init = () => {
       L.tileLayer(
@@ -152,9 +150,15 @@ function Map(props) {
     };
 
     return main(); // Run the main  function
-  }, []);
+  }
 
-  return <div id="map_id" className="map" style={{height: props.height}} />;
+  useEffect(mapAppFunc, []);
+
+  return (
+    <>
+    <div id="map_id" className="map" style={{height: props.height}} />
+    </>
+    );
 }
 
 export default Map;
